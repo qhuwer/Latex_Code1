@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+\begin{document}
+\begin{titlepage}
+
+\centering
+{\huge Abgabeübungsblatt Gruppe 92}\\
+\vspace{2cm}
+{\large Autoren: Quirin Huwer 4356616, Bennet Brinkmeier 4167251, Elias Morgenroth 4361423}\\
+\vspace{1cm}
+{\Large Datum: \today}
+\end{titlepage}
+\clearpage
+\tableofcontents 
+\clearpage
+\hypertarget{Der Zentrale Grenzwertsatz} {\section{Der Zentrale Grenzwertsatz}}
+Der Zentrale Grenzwertsatz (ZGS) ist ein fundamentales Resultat der Wahrscheinlichkeitstheorie, das die Verteilung einer Summer von unabhängiger, identisch verteilter (\textit{\itshape i,i,d}) Zufallsvariablen (ZV) beschreibt. Er besagt, dass unter bestimmten Voraussetzungen die Summe einer großen Anzahl solcher ZV annährend normalverteilt ist, unabhängig von der Verteilung der einzelnen ZV. Dies ist besonders nützlich, da die Normalverteilung gut untersucht und mathematisch handhabbar ist.
+\subsection{Aussage}
+Sei \(X_1,X_2,\dots, X_n\)eine Folge mit \textbf{\itshape i.i.d.} ZV mit dem Erwartungswert \(\mu = \mathbb{E}(X_i)\) und der Varianz \(\sigma^2=Var(X_i)\), wobei \(0 < \sigma^2 < \infty\). Dann konvergiert die standardisierte Summe \(Z_n\) dieser ZV für \(n \rightarrow \infty\) in Verteilung gegen die Standardnormalverteilung: \footnote{Der zentrale Grenzwertsatz hat verschiedene Verallgemeinerungen. Eine davon ist der \textbf{Lindeberger-Feller-Zentrale-Grenzwertsatz}\hyperref[Achim Kleneke.] {1}, Seite 328 der schwächere Bedingungen an die Unabhängigkeit und die identische Verteilung der ZV stellt.}
+
+\begin{equation}
+    Z_n = \frac{\sum_{i=1}^n X_i-n\mu}{\sigma \sqrt{n}} \xrightarrow{d} \mathcal{N}(0,1) \label{1}
+\end{equation}
+
+Das bedeutet, dass für große n die Summe der ZV näherungsweise normalverteilt ist mit Erwartungswert \(n\mu\) und Varianz \(n\sigma^2\): 
+\begin{equation}
+    \sum\limits_{i=1}^n X_i \sim \mathcal{N}(n\mu,n\sigma^2)\label{2}
+\end{equation}
+
+\subsection{Erklärung der Standardisierung}
+Um die Summe der ZV in eine Standardnormalverteilung zu transformieren, subtrahiert man den Erwartungswert \(n\mu\) und teilt durch die Standardabweichung \(\sigma \sqrt{n}\). Dies führt zu der obigen Formel (\ref{1}). Die Darstellung (\ref{2}) ist für \(n \rightarrow \infty\) nicht wohldefiniert.
+\subsection{Anwendung}
+\subsubsection{1. Anwendungsfall für den ZGWS:}
+Im ersten Anwendungsfall wird ein Würfelexperiment zur Veranschaulichung verwendet. Dabei würfelt man solange, bis man 20 mal die sechs gewürfelt hat. Gesucht ist dabei die Wahrscheinlichkeit, dass man diese mit 100 Versuchen schafft. Die Anzahl der benötigten Würfe lässt sich so darstellen:\hyperref[Roland Langrock]{2}
+\begin{equation}
+    X_1+X_2...+X_2{_0},  X_i\sim G(1/6) 
+\end{equation}
+\newpage
+\(\mathbb{E}(X_i)=6\) und \(Var(X_i)=30\)   
+\newline \newline
+Nach dem Zentralen Grenzwertsatz:
+\begin{equation}
+    P(X_1+...+X_w\leq100)= P(\frac{X_+...+X_w-12}{\sqrt{600}}\leq \frac{-20}{\sqrt{600}}) \approx \phi(\frac{-20}{\sqrt{600}})
+\end{equation}
+\subsubsection{2. Anwendungsfall für den ZGWS}
+Im zweiten Anwendungsfall beschäftigt man sich mit der Verteilung der Körpergrößen der Studierenden, woraus die Frage resultiert, ob es sinnvoll wäre, die Stühle in den Vorlesungssälen so zu verändern, dass Menschen die größer als 1,75m sind, angenehmer sitzen können. Grds. würde es sich aus Kostengründen erst lohnen, wenn 50\% der Studierenden von diesem Problem betroffen wären. Um dies näher erläutern zu können, werden hierfür die Teilnehmer des Moduls "31-M9 Datenanalyse" nach ihrer Körpergröße befragt, diese stehen repräsentativ für alle Studierenden der Universität Bielefeld. Laut dem Zentralen Grenzwertsatz nimmt die Verteilung der Stichprobenmittelwerte, unabhängig von Verteilung der Körpergrößen, eine Normalverteilung an, unter Voraussetzung: \(n\geq 30\). Das bedeutet, dass man mithilfe des Zentralen Grenzwertsatzes eine Aussage darüber treffen kann, ob es sinnvoll wäre die Stühle angenehmer für Menschen zu machen, die eine Körpergröße von mind. 1,75m haben.
+
+\section{Bearbeitung von Aufgabe 1}  
+\subsection{Erklärung und Darstellung des SQL Codes}   
+\includegraphics[scale=0.24]{Image6.jpeg}
+\includegraphics[scale=0.24]{Image5.jpeg} 
+\includegraphics[scale=0.24]{Image 1.jpeg}
+\includegraphics[scale=0.24]{Image 2.jpeg}
+\newpage
+\includegraphics[scale=0.24]{Image 3.jpeg}
+\includegraphics[scale=0.24]{Image 4.jpeg}
+\subsection{Github Link}
+\url{https://github.com/qhuwer/Latex_Code1/blame/main/Latex_Code.txt}
+\clearpage
+\renewcommand{\refname}{Literaturverzeichnis}
+\begin{thebibliography}
+ [1] Achim Kleneke. \textit{Wahrscheinlichkeitstheorie.} Springer, 3. Edition, 2013. \label{Achim Kleneke.}
+ \newline
+[2] Dr. Roland Langrock, Vorlesungsfolien (2023/2024) Kapitel 7 Slide 462 \label{Roland Langrock}
+
+\end{thebibliography}
+
+
+
+
+\end{document}
