@@ -56,6 +56,7 @@ Im zweiten Anwendungsfall beschäftigt man sich mit der Verteilung der Körpergr
 \subsection{Erklärung und Darstellung des SQL Codes}   
 \includegraphics[scale=0.24]{Image6.jpeg}
 \includegraphics[scale=0.24]{Image5.jpeg} 
+\newpage
 \includegraphics[scale=0.24]{Image 1.jpeg}
 \includegraphics[scale=0.24]{Image 2.jpeg}
 \newpage
